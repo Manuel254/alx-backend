@@ -38,6 +38,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Gets the items in a page of the dataset"""
         data = self.dataset()
         num_of_pages = len(data)
         p = index_range(page, page_size)[0]
