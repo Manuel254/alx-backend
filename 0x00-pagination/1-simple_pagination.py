@@ -45,9 +45,6 @@ class Server:
         p = index_range(page, page_size)[0]
         size = index_range(page, page_size)[1]
 
-        print(p)
-        print(size)
-
         if type(page) and type(page_size) == int:
             assert page > 0 and page_size > 0
         else:
@@ -56,5 +53,4 @@ class Server:
         if p > num_of_pages or size > num_of_pages:
             return []
         else:
-            return [record for index, record in enumerate(data)
-                    if index >= p and index < size]
+            return data[p: size]
