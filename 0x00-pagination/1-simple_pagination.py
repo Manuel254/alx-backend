@@ -40,17 +40,13 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Gets the items in a page of the dataset"""
+        assert (type(page) is int and page > 0)
+        assert (type(page_size) is int and page_size > 0)
         data = self.dataset()
-        num_of_pages = len(data)
-        p = index_range(page, page_size)[0]
-        size = index_range(page, page_size)[1]
 
-        if type(page) and type(page_size) == int:
-            assert (page > 0 and page_size > 0)
-        else:
-            assert (type(page) is int and type(page_size) is int)
-
-        if p > num_of_pages or size > num_of_pages:
-            return []
-        else:
+        try:
+            p = index_range(page, page_size)[0]
+            size = index_range(page, page_size)[1]
             return data[p: size]
+        except IndexError:
+            return []
