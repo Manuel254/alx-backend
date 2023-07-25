@@ -5,11 +5,10 @@ from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
     """Caching System"""
-    MAX_ITEMS = None
 
     def __init__(self):
         """Initialize"""
-        BaseCaching.__init__(self)
+        super().__init__()
 
     def put(self, key, item):
         """Add an item in the cache"""
