@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""This module contains a class that implement a simple pagination
+for a dataset of popular baby names in csv format
+"""
 import csv
 from typing import List, Tuple
 
