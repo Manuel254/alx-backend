@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""This module implements the hypermedia pagination"""
 import csv
 import math
 from typing import List, Tuple, Dict
