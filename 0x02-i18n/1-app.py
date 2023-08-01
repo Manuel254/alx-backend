@@ -6,12 +6,14 @@ from pytz import timezone
 
 
 app = Flask(__name__)
-babel = Babel(app, default_locale='en', default_timezone='UTC')
+babel = Babel(app)
 
 
 class Config:
     """Creates a configuration for the app"""
     LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
 app.config.from_object(Config)
