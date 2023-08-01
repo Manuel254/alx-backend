@@ -6,7 +6,7 @@ from pytz import timezone
 
 
 app = Flask(__name__)
-babel = Babel(app)
+babel = Babel(app, default_locale='en', default_timezone='UTC')
 
 
 class Config:
@@ -15,6 +15,8 @@ class Config:
 
 
 app.config.from_object(Config)
+
+print(help(babel))
 
 
 @babel.localeselector
